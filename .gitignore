@@ -55,3 +55,12 @@ Thumbs.db
 # Runtime Storage
 storage/*
 !storage/.gitkeep
+
+# Screen recordings & media dumps (>100MB)
+*.mp4
+*.mkv
+*.avi
+*.mov
+
+# Transient test/runtime release packages (keep sample packages)
+release-package/song_001_*
