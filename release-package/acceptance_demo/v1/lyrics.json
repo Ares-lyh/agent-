@@ -1,0 +1,89 @@
+{
+  "project_id": "acceptance_demo",
+  "version": "v1",
+  "title": "盛夏的约号",
+  "sections": [
+    {
+      "section_type": "Verse",
+      "section_name": "主歌 1",
+      "emotion_tag": "温暖克制",
+      "lines": [
+        "课桌上刻下的痕迹还在发烫",
+        "走廊的风吹翻泛黄的时光",
+        "整理好的行囊靠在门旁",
+        "我们笑着说今天谁也不许哭花了妆"
+      ]
+    },
+    {
+      "section_type": "Chorus",
+      "section_name": "副歌",
+      "emotion_tag": "不舍与约定",
+      "lines": [
+        "奔向人海吧 别回头看夕阳",
+        "各自的远方都有漫天星光",
+        "等下一个夏天 无论身在何方",
+        "只要那首熟悉的旋律再次奏响 终会再遇上"
+      ]
+    },
+    {
+      "section_type": "Verse",
+      "section_name": "主歌 2",
+      "emotion_tag": "怀念",
+      "lines": [
+        "最后一次关掉自习室的灯光",
+        "单车后座哼过的歌还在回响",
+        "相片里的少年眼神格外清亮",
+        "把所有青涩的梦悄悄折进行李箱"
+      ]
+    },
+    {
+      "section_type": "Bridge",
+      "section_name": "过渡段",
+      "emotion_tag": "释怀与坚定",
+      "lines": [
+        "车站的汽笛声催促着启程的行囊",
+        "挥动的手臂定格成青春的倔强"
+      ]
+    },
+    {
+      "section_type": "Chorus",
+      "section_name": "副歌",
+      "emotion_tag": "爆发与感动",
+      "lines": [
+        "奔向人海吧 别回头看夕阳",
+        "各自的远方都有漫天星光",
+        "等下一个夏天 无论身在何方",
+        "哪怕岁月漫长 我们一定会在顶峰相望"
+      ]
+    },
+    {
+      "section_type": "Outro",
+      "section_name": "尾声",
+      "emotion_tag": "克制温情",
+      "lines": [
+        "再见啦 朋友",
+        "再见啦 我们的盛夏时光"
+      ]
+    }
+  ],
+  "structure_summary": "Verse-Chorus-Verse-Bridge-Chorus-Outro",
+  "language": "中文",
+  "deepseek_params": {
+    "model": null,
+    "engine": "offline-demo",
+    "model_engine": null,
+    "provider": "mock",
+    "temperature": 0.7,
+    "version": "v1",
+    "sample_rate": null,
+    "channels": null,
+    "bit_depth": null,
+    "allow_sampling": false,
+    "target_duration_s": null,
+    "task_id": null,
+    "feedback": null,
+    "is_mock": true
+  },
+  "raw_response_summary": "离线演示结构化歌词生成完毕 (版本: v1, 段落数: 6) [词律自检] Free; 节拍整齐度=0.79; 修订轮数=0; 检测到韵律形态: Free，韵脚覆盖良好。",
+  "created_at": "2026-10-28T06:48:35.871518Z"
+}

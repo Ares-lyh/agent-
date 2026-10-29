@@ -1,0 +1,31 @@
+{
+  "project_id": "song_real_check_20261028",
+  "artist_name": "",
+  "copyright_statement": "",
+  "rights_confirmed": false,
+  "theme": "山海经里的鲲，从深海游向天空",
+  "genre": "国风电子",
+  "mood": "神秘、辽阔、由静到爆发",
+  "duration_seconds": 180,
+  "duration_text": "3分钟",
+  "audience": "18-30岁，喜欢国风和电子音乐的用户",
+  "platform": [
+    "抖音",
+    "视频号"
+  ],
+  "primary_platform": "抖音",
+  "references": [
+    "国风电子",
+    "山海经意象",
+    "空灵女声"
+  ],
+  "constraints": [
+    "中文歌词",
+    "原创",
+    "不使用版权采样",
+    "副歌要有记忆点"
+  ],
+  "lyrics_language": "中文",
+  "allow_sampling": false,
+  "cover_placeholder_path": null
+}

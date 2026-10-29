@@ -1,0 +1,123 @@
+{
+  "project_id": "song_real_check_20261028",
+  "composition_version": "v1",
+  "bpm": 128,
+  "key": "D小调",
+  "genre": "国风电子",
+  "mood": "神秘、辽阔、由静到爆发",
+  "arrangement_notes": "全曲约180秒，采用原创录制与合成音色，不使用版权采样。以深海低频、古筝泛音和笛声建立国风质感，电子鼓点逐层增强；副歌突出“一跃山海开”与“风来”钩子，终副歌加入宽广和声、强贝斯与大鼓全面爆发，尾声回归空灵。",
+  "lyrics_version": "v1",
+  "lyrics_sha256": "0c616f09371bedf2053e0dcaa5b55d5a0ec719cdcfe14f5873b705795efd7bca",
+  "operation_id": "1974e35ad3a046138c92a5ebfc1a3318",
+  "section_arrangements": [
+    {
+      "section": null,
+      "section_name": "引子·海底无声",
+      "emotion": "幽深神秘",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "海底低频氛围、合成器长音、古筝泛音、气声女声、远处笛音",
+      "dynamic_level": null
+    },
+    {
+      "section": null,
+      "section_name": "主歌一·负海而游",
+      "emotion": "低回孤独",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "低音脉冲、稀疏电子鼓、古筝拨弦、箫声、贴近人声",
+      "dynamic_level": null
+    },
+    {
+      "section": null,
+      "section_name": "预副歌·风从何来",
+      "emotion": "苏醒上扬",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "渐强电子鼓、滚奏古筝、上行合成器、笛声回应、叠加和声",
+      "dynamic_level": null
+    },
+    {
+      "section": null,
+      "section_name": "副歌·一跃山海开",
+      "emotion": "辽阔释放",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "强劲电子鼓、宽厚贝斯、合成器铺底、笛声主旋律、女声叠唱",
+      "dynamic_level": null
+    },
+    {
+      "section": null,
+      "section_name": "间奏·潮声升空",
+      "emotion": "悬浮蓄势",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "无鼓氛围、反向合成器、古筝泛音、呼喊采样式原创人声、升调音效",
+      "dynamic_level": null
+    },
+    {
+      "section": null,
+      "section_name": "主歌二·云上回望",
+      "emotion": "舒展坚定",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "半拍电子鼓、弹拨贝斯、古筝分解、明亮笛声、开阔主唱",
+      "dynamic_level": null
+    },
+    {
+      "section": null,
+      "section_name": "桥段·破鳞成翼",
+      "emotion": "决绝屏息",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "低频心跳、断奏鼓组、渐升噪波、弦乐长音、无伴奏人声停顿",
+      "dynamic_level": null
+    },
+    {
+      "section": null,
+      "section_name": "终副歌·扶摇万里",
+      "emotion": "磅礴自由",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "满编电子鼓、重型贝斯、合成器铜管、笛声齐奏、宽广和声与喊唱",
+      "dynamic_level": null
+    },
+    {
+      "section": null,
+      "section_name": "尾声·海天同息",
+      "emotion": "空灵余韵",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "海风氛围、柔和钢片琴、古筝泛音、远笛、气声女声与低频渐隐",
+      "dynamic_level": null
+    }
+  ],
+  "music_model_params": {
+    "model": "acemusic/acestep-v1.5-turbo",
+    "engine": null,
+    "model_engine": null,
+    "provider": "acemusic",
+    "temperature": 0.7,
+    "version": "v1",
+    "sample_rate": null,
+    "channels": null,
+    "bit_depth": null,
+    "allow_sampling": false,
+    "target_duration_s": 180.0,
+    "task_id": "chatcmpl-b95b942625d925ca",
+    "feedback": null,
+    "is_mock": false
+  },
+  "audio_metadata": {
+    "format": "wav",
+    "sample_rate": 44100,
+    "channels": 2,
+    "bit_depth": 16,
+    "duration_seconds": 180.0,
+    "file_size_bytes": 31752078,
+    "file_path": "C:\\Users\\Administrator\\Desktop\\沿长科技\\storage\\projects\\song_real_check_20261028\\audio\\v1_audio.wav",
+    "sha256": "daa0657c7f7f20f59061d96690659d24449462b84c792723e45df925fd77ec23"
+  },
+  "handoff_notes": "版本 v1; C:\\Users\\Administrator\\Desktop\\沿长科技\\storage\\projects\\song_real_check_20261028\\audio\\v1_audio.wav; SHA-256 daa0657c7f7f20f59061d96690659d24449462b84c792723e45df925fd77ec23; 等待人工审核",
+  "created_at": "2026-10-28T12:06:45.765313Z"
+}

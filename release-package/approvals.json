@@ -1,0 +1,23 @@
+{
+  "project_id": "test_graph_e2e",
+  "records": [
+    {
+      "stage": "lyrics",
+      "approved": true,
+      "target_version": "v1",
+      "reviewer": "Human Reviewer",
+      "feedback": "歌词符合需求单，准予通过进入作曲阶段",
+      "timestamp": "2026-10-28T01:24:27.574732Z",
+      "signature_hash": null
+    },
+    {
+      "stage": "audio",
+      "approved": true,
+      "target_version": "v1",
+      "reviewer": "Human Reviewer",
+      "feedback": "音频试听通过，编曲符合预期，准予生成发行物料包",
+      "timestamp": "2026-10-28T01:24:28.187594Z",
+      "signature_hash": null
+    }
+  ]
+}

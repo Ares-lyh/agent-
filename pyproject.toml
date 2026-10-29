@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "music-creator-agent"
+version = "2.0.0"
+description = "A production-grade multi-agent music creation orchestration system"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0.0",
+    "click>=8.0.0",
+    "requests>=2.28.0",
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "langgraph>=0.6.0,<2",
+    "langchain-core>=0.3.0",
+    "fastapi>=0.116.0",
+    "uvicorn>=0.30.0",
+    "python-multipart>=0.0.18",
+    "pillow>=10.0.0",
+    "pypinyin>=0.53.0",
+    "imageio-ffmpeg>=0.6.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "httpx>=0.27.0"
+]
+
+[project.scripts]
+music-agent = "src.cli:main"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --durations=5"
+testpaths = [
+    "tests",
+]
+pythonpath = ["."]
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.setuptools.package-data]
+"src.web" = ["static/*"]

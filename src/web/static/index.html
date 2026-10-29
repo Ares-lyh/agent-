@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>沿长科技 · 音乐创作主 Agent 协同控制台</title>
+  <link rel="stylesheet" href="/static/style.css?v=2.2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="studio-body">
+  <!-- Top Global Header -->
+  <header class="studio-header">
+    <div class="header-brand">
+      <div class="brand-logo-glow">
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18V5l12-2v13"></path>
+          <circle cx="6" cy="18" r="3"></circle>
+          <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+      </div>
+      <div class="brand-meta">
+        <h1 class="brand-title">沿长科技 · 音乐创作主 Agent</h1>
+        <span class="brand-subtitle">Music Creator Studio & Human-In-The-Loop Station</span>
+      </div>
+    </div>
+
+    <!-- Project Switcher & Actions -->
+    <div class="header-controls">
+      <div class="project-selector-wrapper">
+        <label for="projectSelect" class="control-label">当前工程</label>
+        <select id="projectSelect" class="studio-select" title="选择项目">
+          <option value="">加载中...</option>
+        </select>
+      </div>
+
+      <button id="btnNewProject" class="btn btn-secondary">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        <span>新建需求单</span>
+      </button>
+
+      <button id="btnDownloadPackageTop" class="btn btn-secondary" title="打包下载标准发行物料包 (.ZIP)">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>下载物料包 (.ZIP)</span>
+      </button>
+
+      <button id="btnViewBriefDetail" class="btn btn-ghost" title="查看需求单规格 (Brief)">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span>需求全貌</span>
+      </button>
+
+      <button id="btnViewReport" class="btn btn-ghost" title="查看运行审计报告">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>运行报告</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="studio-container">
+    <div id="runtimeStatus" class="service-status" role="status">正在检查生成服务配置…</div>
+    <div id="artifactSources" class="service-status" role="status"></div>
+    <!-- State Machine Horizontal Progress Tracker -->
+    <section class="fsm-tracker-card" id="fsmTracker">
+      <div class="fsm-nodes-container" id="fsmNodes">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- Workspace Grid (Split Screen) -->
+    <div class="workspace-grid" id="workspaceGrid">
+      
+      <!-- Left Column: Brief & Lyrics Viewer -->
+      <section class="card creative-panel">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <svg class="panel-icon icon-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+            </svg>
+            <h2>歌词分段与创作资产</h2>
+          </div>
+          <div class="version-badge-group">
+            <span class="badge badge-cyan" id="lyricsVersionBadge">v1</span>
+            <span class="badge badge-purple" id="lyricsLanguageBadge">中文</span>
+          </div>
+        </div>
+
+        <!-- Brief Snapshot Pill Tags -->
+        <div class="brief-pills-row" id="briefPills">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Anomaly Warning Banner (if any) -->
+        <div class="anomaly-alert-box hidden" id="anomalyBox">
+          <div class="anomaly-header">
+            <svg class="anomaly-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            <strong>需求单冲突与异常预警</strong>
+          </div>
+          <ul class="anomaly-list" id="anomalyList"></ul>
+          <div class="anomaly-actions-bar" id="anomalyActionsBar">
+            <button id="btnAutoFixCover" class="btn btn-xs btn-cyan" title="一键生成赛博朋克专辑封面以消除物料缺失预警">🎨 一键生成专辑封面 (自动修复)</button>
+            <button id="btnUploadCover" class="btn btn-xs btn-ghost" title="上传自定义封面图片">📤 上传本地封面</button>
+            <input type="file" id="inputCoverFile" accept="image/*" class="hidden">
+          </div>
+        </div>
+
+        <!-- Lyrics Viewer Toolbar -->
+        <p class="modal-desc">下方为歌词原稿和创作设想；“空灵女声”等文字不是对成品演唱效果的检测结果。</p>
+        <div class="lyrics-toolbar-row">
+          <div class="view-switch-tabs">
+            <button id="btnLyricsViewCards" class="view-tab-btn active">分段卡片</button>
+            <button id="btnLyricsViewFull" class="view-tab-btn">完整歌词全文</button>
+          </div>
+          <div class="lyrics-actions-group">
+            <button id="btnCopyLyrics" class="btn btn-xs btn-ghost" title="复制完整歌词全文">📋 复制全文</button>
+            <button id="btnDownloadLyricsTxt" class="btn btn-xs btn-ghost" title="下载 TXT 纯文本歌词">📥 TXT</button>
+            <button id="btnDownloadLyricsLrc" class="btn btn-xs btn-ghost" title="尚无真实逐句对齐时间戳" disabled>📥 LRC</button>
+          </div>
+        </div>
+
+        <!-- Lyrics Viewer Body: Cards vs Full Text -->
+        <div class="lyrics-viewer-container" id="lyricsContainer">
+          <div class="empty-state">
+            <div class="pulse-loader"></div>
+            <p>正在拉取创作中枢歌词数据...</p>
+          </div>
+        </div>
+        <div class="lyrics-full-text-view hidden" id="lyricsFullContainer"></div>
+      </section>
+
+      <!-- Right Column: Composition & Audio Waveform Studio -->
+      <section class="card audio-panel">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <svg class="panel-icon icon-emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+            <h2>作曲编曲与波形试听</h2>
+          </div>
+          <div class="version-badge-group">
+            <span class="badge badge-emerald" id="audioVersionBadge">v1</span>
+            <span class="badge badge-amber" id="audioStatusBadge">等待生成</span>
+          </div>
+        </div>
+        <div id="vocalRequirements" class="service-status" role="status">人声目标：待加载；演唱效果需试听确认</div>
+
+        <!-- Cover Art Studio Card -->
+        <div class="cover-art-container" id="coverArtCard">
+          <div class="cover-preview-box" id="coverPreviewBox">
+            <img id="coverPreviewImg" class="cover-preview-img hidden" alt="专辑封面">
+            <div id="coverEmptyPlaceholder" class="cover-empty-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              <span>暂无封面</span>
+            </div>
+          </div>
+          <div class="cover-info-col">
+            <div class="cover-title" id="coverAlbumTitle">单曲专辑视觉物料</div>
+            <div class="cover-sub" id="coverStatusText">遵循 R5 完备性规范：缺失封面将阻断正式发行判定</div>
+            <div class="cover-btn-row">
+              <button id="btnGenerateCoverRight" class="btn btn-xs btn-cyan">🎨 生成赛博封面</button>
+              <button id="btnUploadCoverRight" class="btn btn-xs btn-ghost">📤 替换封面</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Composition Parameters Deck -->
+        <div class="comp-parameters-grid" id="compParams">
+          <div class="param-box">
+            <span class="param-label">节拍速度 (BPM)</span>
+            <span class="param-value" id="valBPM">--</span>
+          </div>
+          <div class="param-box">
+            <span class="param-label">调性 (Key)</span>
+            <span class="param-value" id="valKey">--</span>
+          </div>
+          <div class="param-box">
+            <span class="param-label">编曲模型</span>
+            <span class="param-value" id="valModel">--</span>
+          </div>
+          <div class="param-box">
+            <span class="param-label">音频规格</span>
+            <span class="param-value" id="valSpecs">44.1kHz 16-bit</span>
+          </div>
+        </div>
+
+        <!-- Arrangement Notes -->
+        <div class="arrangement-notes-card" id="arrangementCard">
+          <span class="notes-title">编曲设计理念：</span>
+          <p class="notes-content" id="arrangementContent">暂无编曲方案，等待歌词审核通过后推进。</p>
+        </div>
+
+        <!-- Duration Meta & Full Track Synthesizer -->
+        <div class="audio-duration-meta-row">
+          <div class="duration-meta-left">
+            <div class="audio-track-badge">
+              <span class="track-badge-label">当前音频:</span>
+              <span class="track-badge-val" id="trackDurationType">尚未生成</span>
+            </div>
+            <div class="audio-track-badge">
+              <span class="track-badge-label">全曲规划:</span>
+              <span class="track-badge-val" id="targetFullDuration">--</span>
+            </div>
+          </div>
+          <button id="btnSynthesizeFullTrack" class="btn btn-xs btn-cyan" title="按需求生成新版本，完成后需重新试听审核">🎵 生成新版本音频</button>
+        </div>
+
+        <!-- Audio Waveform Studio Canvas Player -->
+        <div class="waveform-player-card">
+          <!-- Canvas Waveform Spectrum -->
+          <div class="canvas-wrapper">
+            <canvas id="waveformCanvas" width="700" height="140"></canvas>
+            <div id="canvasOverlay" class="canvas-overlay">
+              <span id="canvasOverlayText">音频尚未生成</span>
+            </div>
+          </div>
+
+          <!-- Playback Controls -->
+          <div class="player-controls-row">
+            <button id="btnPlayPause" class="btn-play-circle" disabled title="播放/暂停">
+              <svg id="playIcon" class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <svg id="pauseIcon" class="icon-pause hidden" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="6" y="4" width="4" height="16"></rect>
+                <rect x="14" y="4" width="4" height="16"></rect>
+              </svg>
+            </button>
+
+            <!-- Seek Slider -->
+            <div class="timeline-container">
+              <input type="range" id="seekSlider" class="timeline-slider" min="0" max="100" value="0" step="0.1" disabled>
+              <div class="time-readout">
+                <span id="currentTime">00:00</span> / <span id="totalDuration">00:00</span>
+              </div>
+            </div>
+
+            <!-- Volume Slider -->
+            <div class="volume-container">
+              <svg class="vol-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              </svg>
+              <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.05" value="0.85">
+            </div>
+
+            <!-- Direct WAV Download Button -->
+            <button id="btnDownloadAudioWav" class="btn btn-sm btn-emerald" disabled title="下载标准 44.1kHz 16-bit PCM WAV 母带音频">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>下载 WAV</span>
+            </button>
+          </div>
+
+          <!-- Hidden Native Audio for HTML5 stream -->
+          <audio id="nativeAudio" preload="auto"></audio>
+        </div>
+
+        <!-- Digital Fingerprint Badge -->
+        <div class="hash-fingerprint-row" id="fingerprintRow">
+          <span class="fingerprint-label">SHA-256 二进制指纹:</span>
+          <code class="fingerprint-code" id="audioSha256">--</code>
+        </div>
+      </section>
+    </div>
+
+    <!-- Sticky Bottom HITL Action Station -->
+    <footer class="hitl-action-bar" id="hitlActionBar">
+      <div class="action-status-indicator">
+        <span class="pulse-dot" id="actionDot"></span>
+        <div class="action-instruction">
+          <span class="instruction-main" id="instructionMain">准备中...</span>
+          <span class="instruction-sub" id="instructionSub">系统正在检索状态机当前决策流</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons-group" id="actionButtons">
+        <!-- Rendered based on FSM state -->
+      </div>
+    </footer>
+  </main>
+
+  <!-- Modals & Drawers -->
+
+  <!-- 1. Review Feedback Modal (驳回修改批注弹窗) -->
+  <div id="modalReject" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="rejectModalTitle">驳回修改意见</h3>
+        <button class="modal-close" id="btnCloseRejectModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc">请输入对当前阶段产物的修改批注，子 Agent 将携带批注自动自增版本重新创制：</p>
+        <textarea id="txtRejectFeedback" class="studio-textarea" rows="4" placeholder="例如：副歌情绪需要更加激昂，适当增加叠字；吉他音色略重，建议调高弦乐比例..."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCancelReject" class="btn btn-ghost">取消</button>
+        <button id="btnConfirmReject" class="btn btn-danger">确认打回并自增重修</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. New Brief Modal (新建需求单弹窗) -->
+  <div id="modalNewBrief" class="modal-backdrop hidden">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3>导入歌曲制作需求单 (Brief)</h3>
+        <button class="modal-close" id="btnCloseNewBriefModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="preset-selector-row">
+          <span>选用需求模板（自动分配新项目 ID）：</span>
+          <button type="button" class="btn btn-sm btn-secondary" onclick="loadPresetBrief('song_001')">样例 1: 毕业季流行摇滚</button>
+          <button type="button" class="btn btn-sm btn-secondary" onclick="loadPresetBrief('song_002')">样例 2: 国风电子</button>
+          <button type="button" class="btn btn-sm btn-secondary" onclick="loadPresetBrief('song_003')">样例 3: 冲突异常单</button>
+          <button type="button" class="btn btn-sm btn-outline-cyan" id="btnGenNewProjectId" title="替换为唯一随机工程编号，避免覆盖已有测试工程">⚡ 随机生成唯一工程 ID</button>
+        </div>
+        <textarea id="txtBriefJson" class="studio-textarea font-mono" rows="12" placeholder="在此粘贴 Brief JSON 内容..."></textarea>
+        <div id="createProjectStatus" class="create-status hidden" role="status" aria-live="polite"></div>
+        <p class="modal-desc">启动后会真实调用规划和作词服务。歌词生成后等待你审核，通过后才能生成歌曲音频。</p>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCancelNewBrief" class="btn btn-ghost">取消</button>
+        <button id="btnSubmitNewBrief" class="btn btn-primary">启动 Agent 创制流水线</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Report & Manifest Drawer (运行报告与物料清单抽屉) -->
+  <div id="drawerReport" class="drawer-backdrop hidden">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <h3>项目运行报告与物料防伪审计</h3>
+        <button class="drawer-close" id="btnCloseReportDrawer">&times;</button>
+      </div>
+      <div class="drawer-body">
+        <div class="drawer-tabs">
+          <button class="tab-btn active" id="tabBtnReport">运行报告 (Markdown)</button>
+          <button class="tab-btn" id="tabBtnManifest">物料索引 (Manifest.json)</button>
+          <div style="margin-left: auto; display: flex; gap: 8px;">
+            <button id="btnDownloadReportMd" class="btn btn-xs btn-ghost">📥 下载 Markdown 报告</button>
+            <button id="btnDownloadManifestJson" class="btn btn-xs btn-ghost">📥 下载 Manifest</button>
+          </div>
+        </div>
+        <div id="tabContentReport" class="tab-content active">
+          <pre id="preReportMarkdown" class="markdown-preview"></pre>
+        </div>
+        <div id="tabContentManifest" class="tab-content hidden">
+          <pre id="preManifestJson" class="json-preview"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Brief Detail Modal (需求全貌详情弹窗) -->
+  <div id="modalBriefDetail" class="modal-backdrop hidden">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3>需求单全貌与规格说明 (Brief Snapshot)</h3>
+        <button class="modal-close" id="btnCloseBriefModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="rightsForm" class="brief-detail-grid" onsubmit="handleSaveRights(event)">
+          <label>艺人 / 项目署名<input id="rightsArtist" required class="form-input" /></label>
+          <label>版权及采样授权声明<textarea id="rightsStatement" required class="form-input"></textarea></label>
+          <label><input id="rightsConfirmed" type="checkbox" required /> 我已审查版权归属及采样授权信息</label>
+          <button type="submit" class="btn btn-primary">保存版权与署名</button>
+        </form>
+        <div id="briefDetailContent" class="brief-detail-grid">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCloseBriefBtn" class="btn btn-primary">关闭</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS Logic -->
+  <div id="toastContainer" class="toast-container" role="status" aria-live="polite"></div>
+  <script src="/static/app.js?v=2.2"></script>
+</body>
+</html>

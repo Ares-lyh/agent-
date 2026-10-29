@@ -1,0 +1,138 @@
+{
+  "project_id": "song_real_check_20261028",
+  "version": "v1",
+  "title": "一跃山海开",
+  "sections": [
+    {
+      "section_type": "intro",
+      "section_name": "引子·海底无声",
+      "emotion_tag": "幽深、神秘、静谧",
+      "lines": [
+        "月沉入海，谁还未醒",
+        "一尾幽蓝，游过无名",
+        "我在万丈寂静",
+        "听见天外的风铃"
+      ]
+    },
+    {
+      "section_type": "verse",
+      "section_name": "主歌一·负海而游",
+      "emotion_tag": "低回、孤独、暗藏力量",
+      "lines": [
+        "背上驮着沉睡的山影",
+        "鳞间藏着未亮的星",
+        "潮汐替我翻过古老残经",
+        "每个字都泛起回音",
+        "我曾以为这无边的深蓝",
+        "就是此生全部的远行"
+      ]
+    },
+    {
+      "section_type": "pre_chorus",
+      "section_name": "预副歌·风从何来",
+      "emotion_tag": "苏醒、渴望、逐渐上扬",
+      "lines": [
+        "忽有一线光，落进我眼睛",
+        "照见海面之外，云正过山岭",
+        "我把千重暗流收紧",
+        "等第一声雷，喊我的名"
+      ]
+    },
+    {
+      "section_type": "chorus",
+      "section_name": "副歌·一跃山海开",
+      "emotion_tag": "辽阔、释放、首次爆发",
+      "lines": [
+        "一跃山海开，一跃入云来",
+        "把万顷幽蓝，扬成九天白",
+        "风来——风来——托我过天外",
+        "让沉默的鳞，迎着雷声开",
+        "一跃山海开，不向深渊摆",
+        "我从长夜来，要向长天在",
+        "风来——风来——听我向天籁",
+        "这一身沧海，也能生出翼来"
+      ]
+    },
+    {
+      "section_type": "interlude",
+      "section_name": "间奏·潮声升空",
+      "emotion_tag": "空灵、悬浮、蓄势",
+      "lines": [
+        "呜——海未远",
+        "啊——云已近"
+      ]
+    },
+    {
+      "section_type": "verse",
+      "section_name": "主歌二·云上回望",
+      "emotion_tag": "惊叹、舒展、坚定",
+      "lines": [
+        "群山在我身下缓缓退",
+        "江河如银线，相逐相随",
+        "曾经压住脊背的海水",
+        "如今在日光里纷飞",
+        "我将故乡藏进一滴泪",
+        "不为回头，只为记得深邃"
+      ]
+    },
+    {
+      "section_type": "bridge",
+      "section_name": "桥段·破鳞成翼",
+      "emotion_tag": "屏息、决绝、爆发前夕",
+      "lines": [
+        "若云层仍重，就再向上",
+        "若雷声拦路，就穿过雷响",
+        "听，最后一片鳞落进海中央",
+        "我展开双翼——接住天光"
+      ]
+    },
+    {
+      "section_type": "final_chorus",
+      "section_name": "终副歌·扶摇万里",
+      "emotion_tag": "磅礴、自由、全面爆发",
+      "lines": [
+        "一跃山海开，一跃入云来",
+        "把万顷幽蓝，扬成九天白",
+        "风来——风来——托我过天外",
+        "让初生的翼，迎着雷声摆",
+        "一跃山海开，天地撞满怀",
+        "我携深海梦，越过万重霭",
+        "风来——风来——吹得群星近",
+        "这一身沧海，终于向天展开",
+        "一跃山海开——",
+        "云后还有云，我还要飞过去"
+      ]
+    },
+    {
+      "section_type": "outro",
+      "section_name": "尾声·海天同息",
+      "emotion_tag": "空灵、辽远、余韵",
+      "lines": [
+        "月浮出海，照我长行",
+        "一片羽影，掠过山顶",
+        "我在万里风里",
+        "仍听见海的呼吸"
+      ]
+    }
+  ],
+  "structure_summary": "约180秒，国风电子，空灵女声。引子12秒—主歌一24秒—预副歌16秒—副歌28秒—间奏12秒—主歌二24秒—桥段16秒—终副歌32秒—尾声16秒。以深海低吟起势，融入古筝泛音、笛声与渐强电子鼓点，副歌以“一跃山海开”形成记忆点，终段全面爆发，尾声回归空灵。所有人声、旋律及音色素材采用原创录制或合成，不使用版权采样。",
+  "language": "中文",
+  "deepseek_params": {
+    "model": "gpt-6.1-sol",
+    "engine": null,
+    "model_engine": null,
+    "provider": "configured-text-api",
+    "temperature": 0.7,
+    "version": "v1",
+    "sample_rate": null,
+    "channels": null,
+    "bit_depth": null,
+    "allow_sampling": false,
+    "target_duration_s": null,
+    "task_id": null,
+    "feedback": null,
+    "is_mock": false
+  },
+  "raw_response_summary": "DeepSeek 生成成功 (Tokens ~629) [词律自检] Free; 节拍整齐度=0.81; 修订轮数=0; 检测到韵律形态: Free，韵脚覆盖良好。",
+  "created_at": "2026-10-28T11:18:10.058867Z"
+}

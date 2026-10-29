@@ -1,0 +1,48 @@
+{
+  "project_id": "test_graph_e2e",
+  "composition_version": "v1",
+  "bpm": 120,
+  "key": "C Major",
+  "genre": "交响金属",
+  "mood": "壮阔、豪迈",
+  "arrangement_notes": "依据 brief 风格 [交响金属] 与情绪 [壮阔、豪迈] 完成编曲规划；采用 C Major 调性，速度定为 120 BPM，全面契合目标受众。",
+  "section_arrangements": [
+    {
+      "section_name": "主歌 1",
+      "emotion": "松弛孤独",
+      "instrumentation": "主奏乐器结合 交响金属 风格，情绪对齐 松弛孤独",
+      "dynamic_level": "Mezzo-Piano"
+    },
+    {
+      "section_name": "副歌",
+      "emotion": "怀旧漫步",
+      "instrumentation": "主奏乐器结合 交响金属 风格，情绪对齐 怀旧漫步",
+      "dynamic_level": "Fortissimo"
+    },
+    {
+      "section_name": "尾声",
+      "emotion": "渐弱宁静",
+      "instrumentation": "主奏乐器结合 交响金属 风格，情绪对齐 渐弱宁静",
+      "dynamic_level": "Mezzo-Piano"
+    }
+  ],
+  "music_model_params": {
+    "model_engine": "mock-music-synthesizer-v1",
+    "sample_rate": 44100,
+    "channels": 2,
+    "bit_depth": 16,
+    "allow_sampling": false
+  },
+  "audio_metadata": {
+    "format": "wav",
+    "sample_rate": 44100,
+    "channels": 2,
+    "bit_depth": 16,
+    "duration_seconds": 15.0,
+    "file_size_bytes": 2646044,
+    "file_path": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\pytest-of-Administrator\\pytest-148\\test_graph_end_to_end_progress0\\storage\\test_graph_e2e\\audio\\v1_audio.wav",
+    "sha256": "f5a246e91442356fbb6e7987c5b788946e4abd160744fc8ea6cb54a24a37cac1"
+  },
+  "handoff_notes": "产物包括高品质立体声 WAV 音频文件 (C:\\Users\\Administrator\\AppData\\Local\\Temp\\pytest-of-Administrator\\pytest-148\\test_graph_end_to_end_progress0\\storage\\test_graph_e2e\\audio\\v1_audio.wav)，文件大小 2646044 字节，SHA-256 为 f5a246e91442356fbb6e7987c5b788946e4abd160744fc8ea6cb54a24a37cac1。已就绪供人工审核与物料包打包。",
+  "created_at": "2026-10-28T01:24:28.151778Z"
+}

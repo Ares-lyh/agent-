@@ -1,0 +1,110 @@
+{
+  "project_id": "acceptance_demo",
+  "song_title": "盛夏的约号",
+  "artist_name": "自动化验收示例（非商业歌曲）",
+  "package_status": "ready",
+  "package_version": "v1",
+  "brief_hash": "1f0c54d7a0243efddd33cdacde91afbb6bbd6c03d102677d7f6f8843ca0fe112",
+  "lyrics_version": "v1",
+  "composition_version": "v1",
+  "audio_version": "v1",
+  "copyright_statement": "自动化验收用模板歌词和合成和弦示例，不代表真实歌曲或商业版权确认。",
+  "lyrics_file": {
+    "file_name": "lyrics.md",
+    "relative_path": "lyrics.md",
+    "sha256": "4cab3c4ba1c33bbcf669b3cf7102f7ff86d231234852b7a4bb83d69d0c47a7c0",
+    "size_bytes": 1015,
+    "exists": true
+  },
+  "audio_file": {
+    "file_name": "audio.wav",
+    "relative_path": "audio.wav",
+    "format": "wav",
+    "duration_seconds": 8.0,
+    "sample_rate": 44100,
+    "channels": 2,
+    "bit_depth": 16,
+    "sha256": "1d967269d14f88f4a269528c001198348c3bdc345456647014dfaf874db3e522",
+    "size_bytes": 1411244,
+    "exists": true
+  },
+  "cover_file": {
+    "file_name": "cover.png",
+    "relative_path": "cover.png",
+    "sha256": "4016431d720db4334e888105097efd6a32ce594f87b68896f94ca46377ab1d4f",
+    "size_bytes": 1392,
+    "exists": true
+  },
+  "approvals_file": {
+    "file_name": "approvals.json",
+    "relative_path": "approvals.json",
+    "sha256": "cfba60101365e20746187aeb2a8a00ed93daf8c47b86f86585c7bb1af2eefc6b",
+    "size_bytes": 1059,
+    "exists": true
+  },
+  "composition_file": {
+    "file_name": "composition.json",
+    "relative_path": "composition.json",
+    "sha256": "099d88c4cdff9edfe759359b03bb217d96178a13e4b69af779759ba2e5d9a458",
+    "size_bytes": 2668,
+    "exists": true
+  },
+  "additional_files": [
+    {
+      "file_name": "brief.json",
+      "relative_path": "brief.json",
+      "sha256": "1f0c54d7a0243efddd33cdacde91afbb6bbd6c03d102677d7f6f8843ca0fe112",
+      "size_bytes": 946,
+      "exists": true
+    },
+    {
+      "file_name": "README.md",
+      "relative_path": "README.md",
+      "sha256": "f068b798e350e0708ec3a7865b9442d41fe410e25975ded18b2c06362fcb6ec8",
+      "size_bytes": 208,
+      "exists": true
+    },
+    {
+      "file_name": "lyrics.json",
+      "relative_path": "lyrics.json",
+      "sha256": "8242d495124c58c7071d2e3c4039124f055a01a3d59dc21d2623d1fd446ec841",
+      "size_bytes": 2623,
+      "exists": true
+    },
+    {
+      "file_name": "composition-source.json",
+      "relative_path": "composition-source.json",
+      "sha256": "6aa2c609f233067a8bf12a142e494288b607d09079d7352a819299cd4910f6cc",
+      "size_bytes": 2763,
+      "exists": true
+    }
+  ],
+  "is_mock": true,
+  "lyrics_approval_record": {
+    "stage": "lyrics",
+    "approved": true,
+    "target_version": "v1",
+    "project_id": "acceptance_demo",
+    "artifact_sha256": "8242d495124c58c7071d2e3c4039124f055a01a3d59dc21d2623d1fd446ec841",
+    "related_sha256": null,
+    "reviewer": "Automated Acceptance Demo",
+    "feedback": null,
+    "timestamp": "2026-10-28T06:48:38.934268+00:00",
+    "signature_hash": "580a34875073caa176bbce12558e3e66e446c9bf2e44bfa3834b1810a28f3b3d"
+  },
+  "audio_approval_record": {
+    "stage": "audio",
+    "approved": true,
+    "target_version": "v1",
+    "project_id": "acceptance_demo",
+    "artifact_sha256": "1d967269d14f88f4a269528c001198348c3bdc345456647014dfaf874db3e522",
+    "related_sha256": "6aa2c609f233067a8bf12a142e494288b607d09079d7352a819299cd4910f6cc",
+    "reviewer": "Automated Acceptance Demo",
+    "feedback": null,
+    "timestamp": "2026-10-28T06:48:47.124371+00:00",
+    "signature_hash": "5f0ff37931787ad6f06771ac81461f8c45af08ad460cc58e0890b08a0505777e"
+  },
+  "missing_materials": [],
+  "integrity_issues": [],
+  "created_at": "2026-10-28T06:48:50.535149Z"
+}

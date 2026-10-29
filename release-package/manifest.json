@@ -1,0 +1,69 @@
+{
+  "project_id": "test_graph_e2e",
+  "song_title": "霓虹夜行",
+  "artist_name": "AI Music Project",
+  "package_status": "needs_info",
+  "package_version": "v1.0.0",
+  "brief_hash": "e3dc8ccc659d89520f310d93e5ce7cff6d4a82fe54ba18ccfbf7d7af08ecb238",
+  "lyrics_version": "v1",
+  "composition_version": "v1",
+  "audio_version": "v1",
+  "copyright_statement": "本歌曲《霓虹夜行》所有歌词与编曲方案基于 brief [test_graph_e2e] 原创生成，声明不使用任何未授权的版权采样。版权归项目方所有。",
+  "lyrics_file": {
+    "file_name": "lyrics.md",
+    "relative_path": "lyrics.md",
+    "sha256": "c9cbab049b3931c9a19a53f5ce7d11b78f8ea115aee24e4021fdf4c1409ed60c",
+    "size_bytes": 491,
+    "exists": true
+  },
+  "audio_file": {
+    "file_name": "audio.wav",
+    "relative_path": "audio.wav",
+    "format": "wav",
+    "duration_seconds": 15.0,
+    "sample_rate": 44100,
+    "channels": 2,
+    "bit_depth": 16,
+    "sha256": "f5a246e91442356fbb6e7987c5b788946e4abd160744fc8ea6cb54a24a37cac1",
+    "size_bytes": 2646044,
+    "exists": true
+  },
+  "cover_file": null,
+  "approvals_file": {
+    "file_name": "approvals.json",
+    "relative_path": "approvals.json",
+    "sha256": "a69012dae8640d89c71ec026b785fa5c88a420a3c2f38a69093d6e11f218602e",
+    "size_bytes": 657,
+    "exists": true
+  },
+  "composition_file": {
+    "file_name": "composition.json",
+    "relative_path": "composition.json",
+    "sha256": "d4c738196f6c0db8909f3e9e75866ecc531042226ea23f4b48619c5222619918",
+    "size_bytes": 2105,
+    "exists": true
+  },
+  "lyrics_approval_record": {
+    "stage": "lyrics",
+    "approved": true,
+    "target_version": "v1",
+    "reviewer": "Human Reviewer",
+    "feedback": "歌词符合需求单，准予通过进入作曲阶段",
+    "timestamp": "2026-10-28T01:24:27.574732Z",
+    "signature_hash": null
+  },
+  "audio_approval_record": {
+    "stage": "audio",
+    "approved": true,
+    "target_version": "v1",
+    "reviewer": "Human Reviewer",
+    "feedback": "音频试听通过，编曲符合预期，准予生成发行物料包",
+    "timestamp": "2026-10-28T01:24:28.187594Z",
+    "signature_hash": null
+  },
+  "missing_materials": [
+    "缺失封面图 cover.png (brief 中未提供有效占位图路径)"
+  ],
+  "integrity_issues": [],
+  "created_at": "2026-10-28T01:24:28.210580Z"
+}

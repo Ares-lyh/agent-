@@ -1,0 +1,96 @@
+{
+  "project_id": "acceptance_demo",
+  "composition_version": "v1",
+  "bpm": 120,
+  "key": "C Major",
+  "genre": "流行摇滚",
+  "mood": "温暖、克制、带一点不舍",
+  "arrangement_notes": "显式离线演示编曲",
+  "lyrics_version": "v1",
+  "lyrics_sha256": "8242d495124c58c7071d2e3c4039124f055a01a3d59dc21d2623d1fd446ec841",
+  "operation_id": "448f3e5509134e249a56435682c41a89",
+  "section_arrangements": [
+    {
+      "section": null,
+      "section_name": "主歌 1",
+      "emotion": "温暖克制",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "流行摇滚",
+      "dynamic_level": null
+    },
+    {
+      "section": null,
+      "section_name": "副歌",
+      "emotion": "不舍与约定",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "流行摇滚",
+      "dynamic_level": null
+    },
+    {
+      "section": null,
+      "section_name": "主歌 2",
+      "emotion": "怀念",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "流行摇滚",
+      "dynamic_level": null
+    },
+    {
+      "section": null,
+      "section_name": "过渡段",
+      "emotion": "释怀与坚定",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "流行摇滚",
+      "dynamic_level": null
+    },
+    {
+      "section": null,
+      "section_name": "副歌",
+      "emotion": "爆发与感动",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "流行摇滚",
+      "dynamic_level": null
+    },
+    {
+      "section": null,
+      "section_name": "尾声",
+      "emotion": "克制温情",
+      "energy": null,
+      "instruments": [],
+      "instrumentation": "流行摇滚",
+      "dynamic_level": null
+    }
+  ],
+  "music_model_params": {
+    "model": null,
+    "engine": null,
+    "model_engine": null,
+    "provider": "mock",
+    "temperature": 0.7,
+    "version": "v1",
+    "sample_rate": null,
+    "channels": null,
+    "bit_depth": null,
+    "allow_sampling": false,
+    "target_duration_s": 8.0,
+    "task_id": "demo-local",
+    "feedback": null,
+    "is_mock": true
+  },
+  "audio_metadata": {
+    "format": "wav",
+    "sample_rate": 44100,
+    "channels": 2,
+    "bit_depth": 16,
+    "duration_seconds": 8.0,
+    "file_size_bytes": 1411244,
+    "file_path": "audio.wav",
+    "sha256": "1d967269d14f88f4a269528c001198348c3bdc345456647014dfaf874db3e522"
+  },
+  "handoff_notes": "版本 v1; C:\\Users\\Administrator\\Desktop\\沿长科技\\storage\\projects\\acceptance_demo\\audio\\v1_audio.wav; SHA-256 1d967269d14f88f4a269528c001198348c3bdc345456647014dfaf874db3e522; 等待人工审核",
+  "created_at": "2026-10-28T06:48:42.772929Z"
+}

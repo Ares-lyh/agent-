@@ -1,0 +1,29 @@
+{
+  "project_id": "song_001",
+  "theme": "毕业季的告别，朋友各奔东西但约定再见面",
+  "genre": "流行摇滚",
+  "mood": "温暖、克制、带一点不舍",
+  "duration_seconds": 210,
+  "duration_text": "3分30秒",
+  "audience": "18-25岁，即将毕业或刚毕业的年轻人",
+  "platform": [
+    "网易云音乐",
+    "抖音"
+  ],
+  "primary_platform": "网易云音乐",
+  "references": [
+    "青春校园乐队",
+    "毕业季合唱感"
+  ],
+  "constraints": [
+    "中文歌词",
+    "原创",
+    "不使用版权采样"
+  ],
+  "lyrics_language": "中文",
+  "allow_sampling": false,
+  "cover_placeholder_path": "fixtures/covers/cover_01.png",
+  "artist_name": "AI Music Demo",
+  "copyright_statement": "本演示项目歌词与编曲为原创创作流程示例，不使用未授权采样；正式使用前由项目方核查权利。",
+  "rights_confirmed": true
+}

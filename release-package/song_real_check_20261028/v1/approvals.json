@@ -1,0 +1,29 @@
+{
+  "project_id": "song_real_check_20261028",
+  "records": [
+    {
+      "stage": "lyrics",
+      "approved": true,
+      "target_version": "v1",
+      "project_id": "song_real_check_20261028",
+      "artifact_sha256": "0c616f09371bedf2053e0dcaa5b55d5a0ec719cdcfe14f5873b705795efd7bca",
+      "related_sha256": null,
+      "reviewer": "User explicit approval 2026-10-28",
+      "feedback": null,
+      "timestamp": "2026-10-28T11:20:41.581657+00:00",
+      "signature_hash": "33c79dfacf536272724fe466367583a30932ab2e405d2677d30b8ab69b919aa1"
+    },
+    {
+      "stage": "audio",
+      "approved": true,
+      "target_version": "v1",
+      "project_id": "song_real_check_20261028",
+      "artifact_sha256": "daa0657c7f7f20f59061d96690659d24449462b84c792723e45df925fd77ec23",
+      "related_sha256": "1bab6e08a4a9004f034cbd6aabffbab1902c36330a4852abf7b72d3e43943cff",
+      "reviewer": "Web Studio Reviewer",
+      "feedback": "",
+      "timestamp": "2026-10-28T16:18:50.371606+00:00",
+      "signature_hash": "5650fa2513cd3c74d97d5bc3232bc426f2d319c66aa7177d2432deb407c2828c"
+    }
+  ]
+}

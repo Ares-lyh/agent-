@@ -1,0 +1,29 @@
+{
+  "project_id": "acceptance_demo",
+  "records": [
+    {
+      "stage": "lyrics",
+      "approved": true,
+      "target_version": "v1",
+      "project_id": "acceptance_demo",
+      "artifact_sha256": "8242d495124c58c7071d2e3c4039124f055a01a3d59dc21d2623d1fd446ec841",
+      "related_sha256": null,
+      "reviewer": "Automated Acceptance Demo",
+      "feedback": null,
+      "timestamp": "2026-10-28T06:48:38.934268+00:00",
+      "signature_hash": "580a34875073caa176bbce12558e3e66e446c9bf2e44bfa3834b1810a28f3b3d"
+    },
+    {
+      "stage": "audio",
+      "approved": true,
+      "target_version": "v1",
+      "project_id": "acceptance_demo",
+      "artifact_sha256": "1d967269d14f88f4a269528c001198348c3bdc345456647014dfaf874db3e522",
+      "related_sha256": "6aa2c609f233067a8bf12a142e494288b607d09079d7352a819299cd4910f6cc",
+      "reviewer": "Automated Acceptance Demo",
+      "feedback": null,
+      "timestamp": "2026-10-28T06:48:47.124371+00:00",
+      "signature_hash": "5f0ff37931787ad6f06771ac81461f8c45af08ad460cc58e0890b08a0505777e"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "task_id": "FEAT-MULTI-AGENT-MUSIC-REFACTOR",
+  "tier": "L2",
+  "status": "DEV_VERIFIED",
+  "current_stage": "STAGE_5_DELIVERY",
+  "prd_file": "docs/prd/multi_agent_music_refactor_prd.md",
+  "spec_file": "docs/specs/multi_agent_music_refactor_blueprint.md",
+  "in_scope": [
+    "基于 LangGraph 状态图构建 3-Agent 协同体系 (主 Agent + 作词子 Agent + 作曲/音频子 Agent)",
+    "作词子 Agent 挂载专业词律与押韵校验工具 (rhyme & meter tools)",
+    "作曲/音频子 Agent 对接真实 Suno/MiniMax 音乐模型异步长任务与母带转码",
+    "LangGraph interrupt 原生两阶段人机协同审核硬门禁 (HITL)",
+    "消除正弦波 Mock 假数据，建立三级真实音频供给与质检机制",
+    "发行物料包构建与 SHA-256 完备性降级控制"
+  ],
+  "completed_slices": [
+    "PRD 需求与架构重构蓝图已双轨锁定 (APPROVED)",
+    "更新 pyproject.toml 引入 langgraph 与 langchain-core 依赖",
+    "构建 src/core/graph_state.py 强类型 StateGraph 状态契约 (遵守 R1 契约单一起源)",
+    "实现 src/tools/ 专业工具链：词律检测分析工具 (rhyme_tool)、真实音乐长任务轮询客户端 (music_api_tool)、RIFF/WAVE 声学与母带质检工具 (acoustic_qc_tool)",
+    "升级 Lyrics Sub-Agent 挂载词律分析工具与自纠反思回路",
+    "升级 Audio Sub-Agent 挂载商业音乐 API 轮询与声学质检工具 (消除正弦波 Mock，遵守 R3/R4 铁律)",
+    "构建 LangGraph StateGraph 多 Agent 协同引擎 (src/core/graph.py)",
+    "完成 MasterAgent 桥接委派，全面向后兼容 CLI 与 Web GUI",
+    "新增 test_tools 与 test_graph_engine 自动化测试，全量 43 项测试 100% 通过"
+  ],
+  "last_verification": {
+    "test_suite": "PASS (43/43, 100%)",
+    "tools_suite": "PASS (4/4)",
+    "graph_suite": "PASS (3/3)",
+    "cli_and_web": "PASS",
+    "encoding_guard": "PASS"
+  }
+}
