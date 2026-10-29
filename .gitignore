@@ -56,11 +56,8 @@ Thumbs.db
 storage/*
 !storage/.gitkeep
 
-# Screen recordings & media dumps (>100MB)
-*.mp4
-*.mkv
-*.avi
-*.mov
-
 # Transient test/runtime release packages (keep sample packages)
 release-package/song_001_*
+
+# Raw large media backups
+*.raw.mp4
